@@ -8,6 +8,12 @@
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
+  "keywords": [
+    "react",
+    "katex",
+    "latex",
+    "math"
+  ],
   "engines": {
     "node": ">=8",
     "npm": ">=5"
