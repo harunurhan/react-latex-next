@@ -1,6 +1,6 @@
 {
   "name": "react-latex-next",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Render LaTeX in React apps",
   "author": "harunurhan",
   "license": "MIT",
@@ -19,7 +19,10 @@
     "start": "rollup -c -w",
     "prepare": "yarn run build",
     "predeploy": "cd example && yarn install && yarn run build",
-    "deploy": "gh-pages -d example/build"
+    "deploy": "gh-pages -d example/build",
+    "preversion": "yarn test",
+    "version": "yarn build",
+    "postversion": "git push origin && git push origin --tags"
   },
   "dependencies": {
     "katex": "^0.10.0-beta"

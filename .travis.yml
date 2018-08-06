@@ -1,0 +1,17 @@
+sudo: required
+language: node_js
+node_js:
+- 8.9.0
+before_deploy:
+- yarn build
+cache: yarn
+deploy:
+- provider: npm
+  skip_cleanup: true
+  email: harunurhan17@gmail.com
+  on:
+  tags: true
+  repo: harunurhan/react-latex-next
+  branch: master
+  api_key:
+    secure: uJ3QDI5Ai4Xcuubki5LRNLCxIl+8d4MmH/5saNeWMbepQ1F6JQqrpQpcMavLGqGRvj41eGTuJ25TbAkYZe0OsNK986sE57pnhwKAFKU+Uqo18pELN3kzgRFSsAsOnt/D6HCMQeWDwwIY3GipHhfcVJ9sQAnifkCMSpchO35rzcMWbJPk7Uxy9lvilLO5imbx1JtBlfu82R/uanFN+B3rkvDqtr37EUkDWK03F3EUanPddmQgRWpeIzXZt51K7sE+gh7OSEe3l9rac46FzsmofvbQL7Bx+JYWtCmWohA9Oehz3/bZozmjBCdSNRpNvlGWH7yPEpD8zo/r+rrJyv0yN8gr3GUdDuh11IXfVrUi3wAYO2ryhyjh9no81L0cJOBfuzQrfEs8P2XBb5pUQv1g0QdYKoUWQWMRQHsm6vJA1DpV8E/tjNOWOuyv+mouLdThj4ONiy9QNlC02bJSYS+6NTSg7y95HMofRKSTMBRLQqn0v7d6MX3BPmzHjrgrhTcS49GYc+vY3kj1qHx4d2yGVIjdpicv4pEQMDAPfFsAgqcj+M93HhjmyiIzflp0lRagGpBmidfHkUW/BFfuL8F1pCr42dBVk3bFIH/u3Fjc/uh3XHxryDAHnt+C5Z8S5j53C6K+siyxrCVUj7yhoL4pFKM35oDGwtsqRkBRm1s4+9s=
