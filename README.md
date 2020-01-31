@@ -4,10 +4,14 @@
 
 [![NPM](https://img.shields.io/npm/v/react-latex-next.svg)](https://www.npmjs.com/package/react-latex-next) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+It renders all pieces of LaTeX (between given delimiters) in a given text.
+
 ## Install
 
 ```bash
 npm install --save react-latex-next
+
+yarn add react-latex-next
 ```
 
 ## Usage
@@ -27,6 +31,31 @@ class Example extends React.Component {
   }
 }
 ```
+
+#### delimiters
+
+List of delimiters to look for math. Each delimiter has three properties, you can configure it via `delimiters` prop: `<Latex delimiters={[...]}>`
+
+Each delimiter must have following structure:
+```js
+{
+  left: "A string which starts the math expression (i.e. the left delimiter)"
+  right: "A string which ends the math expression (i.e. the right delimiter)"
+  display: "A boolean of whether the math in the expression should be rendered in display mode or not"
+}
+```
+
+Default list:
+```js
+[
+  { left: '$$', right: '$$', display: true },
+  { left: '\\(', right: '\\)', display: false },
+  { left: '$', right: '$', display: false },
+  { left: '\\[', right: '\\]', display: true },
+]
+```
+
+
 
 ## License
 
