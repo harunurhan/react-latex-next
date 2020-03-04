@@ -1,6 +1,6 @@
 /** Adapted from /contrib/auto-render/auto-render.js at github.com/Khan/KaTeX */
 
-import { renderToString, ParseError } from 'katex';
+import { renderToString  } from 'katex';
 import { KatexData, Delimiter } from './types';
 import splitAtDelimiters from './splitAtDelimiters';
 
@@ -16,7 +16,7 @@ function splitWithDelimiters(text: string, delimiters: Delimiter[]): KatexData[]
   return data;
 };
 
-export default function renderLatexInTextAsHTMLString(text: string, delimiters: Delimiter[]): string {
+export default function renderLatexInTextAsHTMLString(text: string, delimiters: Delimiter[], strict: boolean): string {
   const data = splitWithDelimiters(text, delimiters);
   const fragments = []
 
@@ -30,10 +30,10 @@ export default function renderLatexInTextAsHTMLString(text: string, delimiters: 
         const rendered = renderToString(latex, { displayMode });
         fragments.push(rendered);
       } catch (error) {
-        if (!(error instanceof ParseError)) {
+        if (strict) {
           throw error;
         }
-        fragments.push(data[i].rawData);
+        fragments.push(data[i].data);
       }
     }
   }
