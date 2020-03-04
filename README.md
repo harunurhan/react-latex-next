@@ -55,6 +55,15 @@ Default list:
 ]
 ```
 
+#### strict
+
+It renders by default non-strict which means it falls back to raw text (without delimiters) in case of error.
+You can enable strict mode like below, which will throw the error instead.
+
+```jsx
+<Latex strict>{textWithSomeBrokenLatex}</Latex>
+```
+
 
 
 ## License

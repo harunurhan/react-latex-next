@@ -7,6 +7,7 @@ import './Latex.css'
 export interface LatexProps {
   children: string;
   delimiters?: Delimiter[];
+  strict?: boolean;
 }
 
 export default class Latex extends React.Component<LatexProps> {
@@ -16,12 +17,13 @@ export default class Latex extends React.Component<LatexProps> {
       { left: '\\(', right: '\\)', display: false },
       { left: '$', right: '$', display: false },
       { left: '\\[', right: '\\]', display: true },
-    ]
+    ],
+    strict: false,
   };
 
   render() {
-    const { children, delimiters } = this.props
-    const renderedLatex = renderLatex(children, delimiters!);
+    const { children, delimiters, strict } = this.props
+    const renderedLatex = renderLatex(children, delimiters!, strict!);
     return (
       <span className="__Latex__" dangerouslySetInnerHTML={{ __html: renderedLatex }} />
     )

@@ -1,11 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Latex renders raw LaTeX incase of LaTeX parse error 1`] = `
+exports[`Latex renders raw LaTeX incase of error by default 1`] = `
 <span
   className="__Latex__"
   dangerouslySetInnerHTML={
     Object {
-      "__html": "Broken formulate: $	o W tar b$.",
+      "__html": "Broken formulate: 	o W tar b.",
+    }
+  }
+/>
+`;
+
+exports[`Latex renders text that has a LaTeX formula with custom delimiter 1`] = `
+<span
+  className="__Latex__"
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "three processes <span class=\\"katex-display\\"><span class=\\"katex\\"><span class=\\"katex-mathml\\"><math><semantics><mrow><msup><mi>e</mi><mo>+</mo></msup><msup><mi>e</mi><mo>−</mo></msup></mrow><annotation encoding=\\"application/x-tex\\">e^+e^-</annotation></semantics></math></span><span class=\\"katex-html\\" aria-hidden=\\"true\\"><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:0.821331em;vertical-align:0em;\\"></span><span class=\\"mord\\"><span class=\\"mord mathit\\">e</span><span class=\\"msupsub\\"><span class=\\"vlist-t\\"><span class=\\"vlist-r\\"><span class=\\"vlist\\" style=\\"height:0.821331em;\\"><span style=\\"top:-3.113em;margin-right:0.05em;\\"><span class=\\"pstrut\\" style=\\"height:2.7em;\\"></span><span class=\\"sizing reset-size6 size3 mtight\\"><span class=\\"mbin mtight\\">+</span></span></span></span></span></span></span></span><span class=\\"mord\\"><span class=\\"mord mathit\\">e</span><span class=\\"msupsub\\"><span class=\\"vlist-t\\"><span class=\\"vlist-r\\"><span class=\\"vlist\\" style=\\"height:0.821331em;\\"><span style=\\"top:-3.113em;margin-right:0.05em;\\"><span class=\\"pstrut\\" style=\\"height:2.7em;\\"></span><span class=\\"sizing reset-size6 size3 mtight\\"><span class=\\"mbin mtight\\">−</span></span></span></span></span></span></span></span></span></span></span></span>",
     }
   }
 />

@@ -15,9 +15,24 @@ describe('Latex', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('renders raw LaTeX incase of LaTeX parse error', () => {
+  it('renders text that has a LaTeX formula with custom delimiter', () => {
+    const latex = 'three processes <math e^+e^- math>';
+    const delimiters = [
+      { left: '<math ', right: ' math>', display: true },
+    ]
+    const wrapper = shallow(<Latex delimiters={delimiters}>{latex}</Latex>);
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('renders raw LaTeX incase of error by default', () => {
     const latex = 'Broken formulate: $\to W t\bar b$.';
     const wrapper = shallow(<Latex>{latex}</Latex>);
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('throws error incase of error', () => {
+    const latex = 'Broken formulate: $\to W t\bar b$.';
+    const brokenRender = () => shallow(<Latex strict>{latex}</Latex>);
+    expect(brokenRender).toThrowError();
   });
 });
