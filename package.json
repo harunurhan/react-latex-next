@@ -31,7 +31,7 @@
     "postversion": "git push origin && git push origin --tags"
   },
   "dependencies": {
-    "katex": "^0.10.0-beta"
+    "katex": "^0.13.0"
   },
   "peerDependencies": {
     "prop-types": "^15.5.4",
