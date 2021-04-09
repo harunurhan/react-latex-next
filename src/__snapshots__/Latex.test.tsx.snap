@@ -1,5 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Latex renders correctly sequences of $..$ 1`] = `
+<span
+  className="__Latex__"
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "<span class=\\"katex\\"><span class=\\"katex-mathml\\"><math xmlns=\\"http://www.w3.org/1998/Math/MathML\\"><semantics><mrow><mi>h</mi><mi>e</mi><mi>l</mi><mi>l</mi><mi>o</mi></mrow><annotation encoding=\\"application/x-tex\\">hello</annotation></semantics></math></span><span class=\\"katex-html\\" aria-hidden=\\"true\\"><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:0.69444em;vertical-align:0em;\\"></span><span class=\\"mord mathnormal\\">h</span><span class=\\"mord mathnormal\\">e</span><span class=\\"mord mathnormal\\" style=\\"margin-right:0.01968em;\\">ll</span><span class=\\"mord mathnormal\\">o</span></span></span></span><span class=\\"katex\\"><span class=\\"katex-mathml\\"><math xmlns=\\"http://www.w3.org/1998/Math/MathML\\"><semantics><mrow><mi>w</mi><mi>o</mi><mi>r</mi><mi>l</mi><mi>d</mi></mrow><annotation encoding=\\"application/x-tex\\">world</annotation></semantics></math></span><span class=\\"katex-html\\" aria-hidden=\\"true\\"><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:0.69444em;vertical-align:0em;\\"></span><span class=\\"mord mathnormal\\" style=\\"margin-right:0.02691em;\\">w</span><span class=\\"mord mathnormal\\" style=\\"margin-right:0.02778em;\\">or</span><span class=\\"mord mathnormal\\" style=\\"margin-right:0.01968em;\\">l</span><span class=\\"mord mathnormal\\">d</span></span></span></span><span class=\\"katex\\"><span class=\\"katex-mathml\\"><math xmlns=\\"http://www.w3.org/1998/Math/MathML\\"><semantics><mrow><mi>b</mi><mi>o</mi><mi>o</mi></mrow><annotation encoding=\\"application/x-tex\\">boo</annotation></semantics></math></span><span class=\\"katex-html\\" aria-hidden=\\"true\\"><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:0.69444em;vertical-align:0em;\\"></span><span class=\\"mord mathnormal\\">b</span><span class=\\"mord mathnormal\\">oo</span></span></span></span>",
+    }
+  }
+/>
+`;
+
 exports[`Latex renders raw LaTeX incase of error by default 1`] = `
 <span
   className="__Latex__"

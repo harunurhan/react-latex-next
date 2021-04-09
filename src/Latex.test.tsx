@@ -35,4 +35,9 @@ describe('Latex', () => {
     const brokenRender = () => shallow(<Latex strict>{latex}</Latex>);
     expect(brokenRender).toThrowError();
   });
+
+  it("renders correctly sequences of $..$", () => {
+    const latex = "$hello$$world$$boo$";
+    const wrapper = shallow(<Latex>{latex}</Latex>);
+    expect(wrapper).toMatchSnapshot();
 });
