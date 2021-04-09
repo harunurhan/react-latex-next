@@ -1,6 +1,6 @@
 /* Adapted from /contrib/auto-render/splitAtDelimiters.js at github.com/Khan/KaTeX */
 
-import { KatexData } from './types';
+import { KatexData, Delimiter } from './types';
 
 function findEndOfMath (delimiterValue: string, text: string, startIndex: number): number {
   let index = startIndex;
@@ -28,74 +28,57 @@ function findEndOfMath (delimiterValue: string, text: string, startIndex: number
   return -1;
 };
 
-export default function splitAtDelimiters(startData: KatexData[], leftDelimiterValue: string, rightDelimiterValue: string, display: boolean): KatexData[] {
-  const finalData = [];
+function escapeRegex (text: string): string {
+    return text.replace(/[-/\\^$*+?.()|[\]{}]/g, "\\$&");
+};
 
-  for (let i = 0; i < startData.length; i++) {
-      if (startData[i].type === 'text') {
-          const text = startData[i].data;
+const amsRegex = /^\\begin{/;
 
-          let lookingForLeft = true;
-          let currIndex = 0;
-          let nextIndex;
+export default function splitAtDelimiters (text: string, delimiters: Delimiter[]): KatexData[] {
+    let index;
+    const data = [];
 
-          nextIndex = text.indexOf(leftDelimiterValue);
-          if (nextIndex !== -1) {
-              currIndex = nextIndex;
-              finalData.push({
-                  type: 'text',
-                  data: text.slice(0, currIndex),
-              });
-              lookingForLeft = false;
-          }
+    const regexLeft = new RegExp(
+        "(" + delimiters.map((x) => escapeRegex(x.left)).join("|") + ")"
+    );
 
-          while (true) {
-              if (lookingForLeft) {
-                  nextIndex = text.indexOf(leftDelimiterValue, currIndex);
-                  if (nextIndex === -1) {
-                      break;
-                  }
+    while (true) {
+        index = text.search(regexLeft);
+        if (index === -1) {
+            break;
+        }
+        if (index > 0) {
+            data.push({
+                type: "text",
+                data: text.slice(0, index),
+            });
+            text = text.slice(index); // now text starts with delimiter
+        }
+        // ... so this always succeeds:
+        const i = delimiters.findIndex((delim) => text.startsWith(delim.left));
+        index = findEndOfMath(delimiters[i].right, text, delimiters[i].left.length);
+        if (index === -1) {
+            break;
+        }
+        const rawData = text.slice(0, index + delimiters[i].right.length);
+        const math = amsRegex.test(rawData)
+            ? rawData
+            : text.slice(delimiters[i].left.length, index);
+        data.push({
+            type: "math",
+            data: math,
+            rawData,
+            display: delimiters[i].display,
+        });
+        text = text.slice(index + delimiters[i].right.length);
+    }
 
-                  finalData.push({
-                      type: 'text',
-                      data: text.slice(currIndex, nextIndex),
-                  });
+    if (text !== "") {
+        data.push({
+            type: "text",
+            data: text,
+        });
+    }
 
-                  currIndex = nextIndex;
-              } else {
-                  nextIndex = findEndOfMath(
-                      rightDelimiterValue,
-                      text,
-                      currIndex + leftDelimiterValue.length);
-                  if (nextIndex === -1) {
-                      break;
-                  }
-
-                  finalData.push({
-                      type: 'math',
-                      data: text.slice(
-                          currIndex + leftDelimiterValue.length,
-                          nextIndex),
-                      rawData: text.slice(
-                          currIndex,
-                          nextIndex + rightDelimiterValue.length),
-                      display: display,
-                  });
-
-                  currIndex = nextIndex + rightDelimiterValue.length;
-              }
-
-              lookingForLeft = !lookingForLeft;
-          }
-
-          finalData.push({
-              type: 'text',
-              data: text.slice(currIndex),
-          });
-      } else {
-          finalData.push(startData[i]);
-      }
-  }
-
-  return finalData;
+    return data;
 };
