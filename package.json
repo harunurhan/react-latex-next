@@ -23,12 +23,7 @@
     "test:watch": "react-scripts-ts test --env=jsdom",
     "build": "rollup -c",
     "start": "rollup -c -w",
-    "prepare": "yarn run build",
-    "predeploy": "cd example && yarn install && yarn run build",
-    "deploy": "gh-pages -d example/build",
-    "preversion": "yarn test",
-    "version": "yarn build",
-    "postversion": "git push origin && git push origin --tags"
+    "prepare": "yarn run build"
   },
   "dependencies": {
     "katex": "^0.13.0"
