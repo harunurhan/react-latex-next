@@ -35,8 +35,8 @@
   },
   "peerDependencies": {
     "prop-types": "^15.5.4",
-    "react": "^15.0.0 || ^16.0.0",
-    "react-dom": "^15.0.0 || ^16.0.0"
+    "react": "^15.0.0 || ^16.0.0 || ^17.0.0",
+    "react-dom": "^15.0.0 || ^16.0.0 || ^17.0.0"
   },
   "devDependencies": {
     "@types/enzyme": "^3.1.13",
@@ -52,8 +52,8 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.4",
     "gh-pages": "^1.2.0",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
     "react-scripts-ts": "^2.16.0",
     "react-test-renderer": "^16.4.2",
     "rollup": "^0.62.0",
