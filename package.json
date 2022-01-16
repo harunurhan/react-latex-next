@@ -3,6 +3,7 @@
   "version": "2.1.0",
   "description": "Render LaTeX in React apps",
   "author": "harunurhan",
+  "homepage": "https://react-latex.netlify.app",
   "license": "MIT",
   "repository": "harunurhan/react-latex-next",
   "main": "dist/index.js",

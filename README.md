@@ -6,6 +6,8 @@
 
 It renders all fragments of LaTeX (between delimiters) in a given text, similar to [KaTeX's auto-render](https://katex.org/docs/autorender.html).
 
+See [the demo](https://react-latex.netlify.app).
+
 ## Install
 
 ```bash
