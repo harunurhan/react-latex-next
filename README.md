@@ -1,42 +1,38 @@
 # react-latex-next
 
-> Render LaTeX in React apps
+> Render LaTeX beautifully in React apps!
 
 [![NPM](https://img.shields.io/npm/v/react-latex-next.svg)](https://www.npmjs.com/package/react-latex-next) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-It renders all pieces of LaTeX (between given delimiters) in a given text.
+It renders all fragments of LaTeX (between delimiters) in a given text, similar to [KaTeX's auto-render](https://katex.org/docs/autorender.html).
 
 ## Install
 
 ```bash
-npm install --save react-latex-next
-
 yarn add react-latex-next
+
+npm install --save react-latex-next
 ```
 
 ## Usage
 
 ```tsx
-import * as React from 'react'
-
 import 'katex/dist/katex.min.css'
 import Latex from 'react-latex-next'
 
-const LaTeX = 'We give illustrations for the three processes $e^+e^-$, gluon-gluon and $\\gamma\\gamma \\to W t\\bar b$.'
-class Example extends React.Component {
-  render () {
-    return (
-      <Latex>{LaTeX}<Latex/>
-    )
-  }
+function Example() {
+  return (
+    <Latex>We give illustrations for the three processes $e^+e^-$, gluon-gluon and $\\gamma\\gamma \\to W t\\bar b$.</Latex>
+  )
 }
 ```
 
-#### delimiters
+### delimiters
 
-List of delimiters to look for math. Each delimiter has three properties, you can configure it via `delimiters` prop: `<Latex delimiters={[...]}>`
+List of delimiters to look for math you can configure it via `delimiters` prop: `<Latex delimiters={[...]}>`
 
-Each delimiter must have following structure:
+#### A delimiter
+
 ```js
 {
   left: "A string which starts the math expression (i.e. the left delimiter)"
@@ -45,7 +41,8 @@ Each delimiter must have following structure:
 }
 ```
 
-Default list:
+#### Default delimiters
+
 ```js
 [
   { left: '$$', right: '$$', display: true },
@@ -55,7 +52,7 @@ Default list:
 ]
 ```
 
-#### strict
+### strict
 
 It renders by default non-strict which means it falls back to raw text (without delimiters) in case of error.
 You can enable strict mode like below, which will throw the error instead.
@@ -63,8 +60,6 @@ You can enable strict mode like below, which will throw the error instead.
 ```jsx
 <Latex strict>{textWithSomeBrokenLatex}</Latex>
 ```
-
-
 
 ## License
 
