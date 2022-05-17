@@ -27,7 +27,7 @@
     "prepare": "yarn run build"
   },
   "dependencies": {
-    "katex": "^0.13.0"
+    "katex": "^0.15.0"
   },
   "peerDependencies": {
     "prop-types": "^15.5.4",
