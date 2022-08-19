@@ -63,6 +63,12 @@ You can enable strict mode like below, which will throw the error instead.
 <Latex strict>{textWithSomeBrokenLatex}</Latex>
 ```
 
+### macros
+
+```jsx
+<Latex macros={{ "\\R": "\\mathbb{R}" }}>{text}</Latex>
+```
+
 ## License
 
 MIT © [harunurhan](https://github.com/harunurhan)
