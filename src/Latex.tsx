@@ -8,6 +8,7 @@ export interface LatexProps {
   children: string;
   delimiters?: Delimiter[];
   strict?: boolean;
+  macros?: object
 }
 
 export default class Latex extends React.Component<LatexProps> {
@@ -19,11 +20,12 @@ export default class Latex extends React.Component<LatexProps> {
       { left: '\\[', right: '\\]', display: true },
     ],
     strict: false,
+    macros: undefined
   };
 
   render() {
-    const { children, delimiters, strict } = this.props
-    const renderedLatex = renderLatex(children, delimiters!, strict!);
+    const { children, delimiters, strict, macros } = this.props
+    const renderedLatex = renderLatex(children, delimiters!, strict!, macros);
     return (
       <span className="__Latex__" dangerouslySetInnerHTML={{ __html: renderedLatex }} />
     )
