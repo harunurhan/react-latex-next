@@ -19,8 +19,7 @@ export default class Latex extends React.Component<LatexProps> {
       { left: '$', right: '$', display: false },
       { left: '\\[', right: '\\]', display: true },
     ],
-    strict: false,
-    macros: undefined
+    strict: false
   };
 
   render() {
