@@ -42,7 +42,7 @@ describe('Latex', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it("renders correctly an expression with macros", () => {
+  it("renders an expression with macros", () => {
     const latex = "$\\R$";
     const wrapper = shallow(<Latex macros={{"\\R": "\\mathbb{R}"}}>{latex}</Latex>);
     expect(wrapper).toMatchSnapshot();
