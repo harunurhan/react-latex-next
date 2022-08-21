@@ -65,6 +65,11 @@ You can enable strict mode like below, which will throw the error instead.
 
 ### macros
 
+A collection of custom macros.
+Each macro is a property with a name like `\name` (written `\\name` in JavaScript) which maps to a string that describes the expansion of the macro.
+Also we could add a link to the persistent macros,
+make sure users pass the same object to all Latex react components if they want macro persistence.
+
 ```jsx
 <Latex macros={{ "\\R": "\\mathbb{R}" }}>{text}</Latex>
 ```
