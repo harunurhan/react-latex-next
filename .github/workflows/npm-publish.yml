@@ -26,7 +26,7 @@ jobs:
       env:
         CI: true
     - name: Publish if version has been updated
-      uses: pascalgn/npm-publish-action@4f4bf159e299f65d21cd1cbd96fc5d53228036df
+      uses: pascalgn/npm-publish-action@cddeb3510a079fbcf445797a0b429e0c0a2432f5
       with:
         tag_name: "v%s"
         tag_message: "v%s"
