@@ -70,7 +70,7 @@ A collection of custom macros. Each macro is a property with a name like `\name`
 `macros` object is also used to persists macros defined in `LaTeX` via `\gdef`, refer to the [KaTeX docs](https://katex.org/docs/api.html#persistent-macros) for more details (and security implications)
 
 ```jsx
-<Latex macros={{ "\\R": "\\mathbb{R}" }}>$\\R$ will expand to the defined macro</Latex>
+<Latex macros={{ "\\f": "#1f(#2)" }}>{'$\\f\\relax{x} = x$ is rendered using macros'}</Latex>
 ```
 
 ## License
