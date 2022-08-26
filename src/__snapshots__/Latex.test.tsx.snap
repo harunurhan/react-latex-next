@@ -1,5 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Latex renders an expression with macros 1`] = `
+<span
+  className="__Latex__"
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "<span class=\\"katex\\"><span class=\\"katex-mathml\\"><math xmlns=\\"http://www.w3.org/1998/Math/MathML\\"><semantics><mrow><mi mathvariant=\\"double-struck\\">R</mi></mrow><annotation encoding=\\"application/x-tex\\">\\\\R</annotation></semantics></math></span><span class=\\"katex-html\\" aria-hidden=\\"true\\"><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:0.68889em;vertical-align:0em;\\"></span><span class=\\"mord mathbb\\">R</span></span></span></span>",
+    }
+  }
+/>
+`;
+
 exports[`Latex renders correctly sequences of $..$ 1`] = `
 <span
   className="__Latex__"

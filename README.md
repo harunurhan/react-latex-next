@@ -63,6 +63,16 @@ You can enable strict mode like below, which will throw the error instead.
 <Latex strict>{textWithSomeBrokenLatex}</Latex>
 ```
 
+### macros
+
+A collection of custom macros. Each macro is a property with a name like `\name` (written `\\name` in JavaScript) which maps to a string that describes the expansion of the macro.
+
+`macros` object is also used to persists macros defined in `LaTeX` via `\gdef`, refer to the [KaTeX docs](https://katex.org/docs/api.html#persistent-macros) for more details (and security implications)
+
+```jsx
+<Latex macros={{ "\\R": "\\mathbb{R}" }}>$\\R$ will expand to the defined macro</Latex>
+```
+
 ## License
 
 MIT © [harunurhan](https://github.com/harunurhan)

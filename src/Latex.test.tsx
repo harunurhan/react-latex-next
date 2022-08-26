@@ -40,4 +40,11 @@ describe('Latex', () => {
     const latex = "$hello$$world$$boo$";
     const wrapper = shallow(<Latex>{latex}</Latex>);
     expect(wrapper).toMatchSnapshot();
-});
+  });
+
+  it("renders an expression with macros", () => {
+    const latex = "$\\R$";
+    const wrapper = shallow(<Latex macros={{"\\R": "\\mathbb{R}"}}>{latex}</Latex>);
+    expect(wrapper).toMatchSnapshot();
+  })
+})
