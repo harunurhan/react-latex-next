@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import renderLatex from './renderLatex';
+import renderLatex, { Macros } from './renderLatex';
 import { Delimiter } from './types';
 import './Latex.css'
 
@@ -8,7 +8,7 @@ export interface LatexProps {
   children: string;
   delimiters?: Delimiter[];
   strict?: boolean;
-  macros?: object
+  macros?: Macros
 }
 
 export default class Latex extends React.Component<LatexProps> {

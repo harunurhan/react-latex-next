@@ -65,13 +65,12 @@ You can enable strict mode like below, which will throw the error instead.
 
 ### macros
 
-A collection of custom macros.
-Each macro is a property with a name like `\name` (written `\\name` in JavaScript) which maps to a string that describes the expansion of the macro.
-Also we could add a link to the persistent macros,
-make sure users pass the same object to all Latex react components if they want macro persistence.
+A collection of custom macros. Each macro is a property with a name like `\name` (written `\\name` in JavaScript) which maps to a string that describes the expansion of the macro.
+
+`macros` object is also used to persists macros defined in `LaTeX` via `\gdef`, refer to the [KaTeX docs](https://katex.org/docs/api.html#persistent-macros) for more details (and security implications)
 
 ```jsx
-<Latex macros={{ "\\R": "\\mathbb{R}" }}>{text}</Latex>
+<Latex macros={{ "\\R": "\\mathbb{R}" }}>$\\R$ will expand to the defined macro</Latex>
 ```
 
 ## License
