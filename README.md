@@ -19,15 +19,17 @@ npm install --save react-latex-next
 ## Usage
 
 ```tsx
-import 'katex/dist/katex.min.css'
-import Latex from 'react-latex-next'
+import 'katex/dist/katex.min.css';
+import Latex from 'react-latex-next';
 
 function Example() {
   return (
     <Latex>We give illustrations for the three processes $e^+e^-$, gluon-gluon and $\\gamma\\gamma \\to W t\\bar b$.</Latex>
-  )
+  );
 }
 ```
+
+**Note**: `katex` CSS needs to be included in your final bundle. Above example is using `import` to load `css` but depending on how the code & styles are built and bundled, it may be different for your case. 
 
 ### delimiters
 
