@@ -24,7 +24,7 @@ export default class Latex extends React.Component<LatexProps> {
 
   render() {
     const { children, delimiters, strict, macros } = this.props
-    const renderedLatex = renderLatex(Array.isArray(children) ? children.join() : children, delimiters!, strict!, macros);
+    const renderedLatex = renderLatex(Array.isArray(children) ? children.join('') : children, delimiters!, strict!, macros);
     return (
       <span className="__Latex__" dangerouslySetInnerHTML={{ __html: renderedLatex }} />
     )
