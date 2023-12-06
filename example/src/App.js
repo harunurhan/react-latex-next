@@ -79,8 +79,16 @@ export default function App() {
         </Latex>
       </div>
       <div>
-        <h2>Other examples</h2>
+        <h2>Examples using JS expressions in LaTeX formula</h2>
+
+        <p>
+          <code>{`<Latex>\${variableName} \\times {otherVariableName}$</Latex>`}</code>
+        </p>
         <Latex>${variableName} \times {otherVariableName}$</Latex>
+
+        <p>
+          <code>{`<Latex>$3^9 = {Math.pow(3,9)}$</Latex>`}</code>
+        </p>
         <Latex>$3^9 = {Math.pow(3,9)}$</Latex>
       </div>
     </main>
