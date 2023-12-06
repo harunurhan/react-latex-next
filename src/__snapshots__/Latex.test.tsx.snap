@@ -1,5 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Latex handles multiple children inside the node 1`] = `
+<span
+  className="__Latex__"
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "Label: <span class=\\"katex\\"><span class=\\"katex-mathml\\"><math xmlns=\\"http://www.w3.org/1998/Math/MathML\\"><semantics><mrow><mn>1</mn><mo>×</mo><mn>2</mn></mrow><annotation encoding=\\"application/x-tex\\">1 \\\\times 2</annotation></semantics></math></span><span class=\\"katex-html\\" aria-hidden=\\"true\\"><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:0.72777em;vertical-align:-0.08333em;\\"></span><span class=\\"mord\\">1</span><span class=\\"mspace\\" style=\\"margin-right:0.2222222222222222em;\\"></span><span class=\\"mbin\\">×</span><span class=\\"mspace\\" style=\\"margin-right:0.2222222222222222em;\\"></span></span><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:0.64444em;vertical-align:0em;\\"></span><span class=\\"mord\\">2</span></span></span></span>",
+    }
+  }
+/>
+`;
+
 exports[`Latex renders an expression with macros 1`] = `
 <span
   className="__Latex__"
