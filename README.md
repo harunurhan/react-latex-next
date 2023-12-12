@@ -24,12 +24,12 @@ import Latex from 'react-latex-next';
 
 function Example() {
   return (
-    <Latex>We give illustrations for the three processes $e^+e^-$, gluon-gluon and $\\gamma\\gamma \\to W t\\bar b$.</Latex>
+    <Latex>We give illustrations for the {1 + 2} processes $e^+e^-$, gluon-gluon and $\\gamma\\gamma \\to W t\\bar b$.</Latex>
   );
 }
 ```
 
-**Note**: `katex` CSS needs to be included in your final bundle. Above example is using `import` to load `css` but depending on how the code & styles are built and bundled, it may be different for your case. 
+**Note**: `katex` CSS needs to be included in your final bundle. Above example is using `import` to load `css` but depending on how the code & styles are built and bundled, it may be different for your case.
 
 ### delimiters
 

@@ -5,7 +5,7 @@ import { Delimiter } from './types';
 import './Latex.css'
 
 export interface LatexProps {
-  children: string;
+  children: string | string[];
   delimiters?: Delimiter[];
   strict?: boolean;
   macros?: Macros
@@ -24,7 +24,7 @@ export default class Latex extends React.Component<LatexProps> {
 
   render() {
     const { children, delimiters, strict, macros } = this.props
-    const renderedLatex = renderLatex(children, delimiters!, strict!, macros);
+    const renderedLatex = renderLatex(Array.isArray(children) ? children.join('') : children, delimiters!, strict!, macros);
     return (
       <span className="__Latex__" dangerouslySetInnerHTML={{ __html: renderedLatex }} />
     )

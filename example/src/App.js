@@ -14,6 +14,10 @@ export default function App() {
   const [text, setText] = useState(INITIAL_TEXT_WITH_LATEX);
   const [strict, setStrict] = useState(INITIAL_STRICT_FLAG);
   const [macros, setMacros] = useState(INITIAL_MACROS);
+
+  const variableName = "variableOne";
+  const otherVariableName = "variableTwo";
+
   return (
     <main style={{ padding: 12, maxWidth: 780 }}>
       <h1>
@@ -73,6 +77,19 @@ export default function App() {
         <Latex strict={strict} macros={macros}>
           {text}
         </Latex>
+      </div>
+      <div>
+        <h2>Examples using JS expressions in LaTeX formula</h2>
+
+        <p>
+          <code>{`<Latex>\${variableName} \\times {otherVariableName}$</Latex>`}</code>
+        </p>
+        <Latex>${variableName} \times {otherVariableName}$</Latex>
+
+        <p>
+          <code>{`<Latex>$3^9 = {Math.pow(3,9)}$</Latex>`}</code>
+        </p>
+        <Latex>$3^9 = {Math.pow(3,9)}$</Latex>
       </div>
     </main>
   );

@@ -47,4 +47,10 @@ describe('Latex', () => {
     const wrapper = shallow(<Latex macros={{"\\R": "\\mathbb{R}"}}>{latex}</Latex>);
     expect(wrapper).toMatchSnapshot();
   })
+
+  it("handles multiple children inside the node", () => {
+    const latex = "$1 \\times 2$";
+    const wrapper = shallow(<Latex>Label: {latex}</Latex>);
+    expect(wrapper).toMatchSnapshot();
+  });
 })
