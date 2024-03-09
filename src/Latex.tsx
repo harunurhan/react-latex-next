@@ -18,7 +18,7 @@ const defaultDelimiters = [
   { left: '\\[', right: '\\]', display: true },
 ]
 
-export default function Latex({children, delimiters = defaultDelimiters, strict = false, macros }: LatexProps): React.ReactNode {
+export default function Latex({children, delimiters = defaultDelimiters, strict = false, macros }: LatexProps) {
   const renderedLatex = renderLatex(Array.isArray(children) ? children.join('') : children, delimiters!, strict!, macros);
   return (
     <span className="__Latex__" dangerouslySetInnerHTML={{ __html: renderedLatex }} />
