@@ -11,22 +11,16 @@ export interface LatexProps {
   macros?: Macros
 }
 
-export default class Latex extends React.Component<LatexProps> {
-  static defaultProps: Partial<LatexProps> = {
-    delimiters: [
-      { left: '$$', right: '$$', display: true },
-      { left: '\\(', right: '\\)', display: false },
-      { left: '$', right: '$', display: false },
-      { left: '\\[', right: '\\]', display: true },
-    ],
-    strict: false
-  };
+const defaultDelimiters = [
+  { left: '$$', right: '$$', display: true },
+  { left: '\\(', right: '\\)', display: false },
+  { left: '$', right: '$', display: false },
+  { left: '\\[', right: '\\]', display: true },
+]
 
-  render() {
-    const { children, delimiters, strict, macros } = this.props
-    const renderedLatex = renderLatex(Array.isArray(children) ? children.join('') : children, delimiters!, strict!, macros);
-    return (
-      <span className="__Latex__" dangerouslySetInnerHTML={{ __html: renderedLatex }} />
-    )
-  }
+export default function Latex({children, delimiters = defaultDelimiters, strict = false, macros }: LatexProps) {
+  const renderedLatex = renderLatex(Array.isArray(children) ? children.join('') : children, delimiters!, strict!, macros);
+  return (
+    <span className="__Latex__" dangerouslySetInnerHTML={{ __html: renderedLatex }} />
+  )
 }
