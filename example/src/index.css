@@ -3,3 +3,17 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.example-table {
+  border-collapse: collapse;
+
+  td {
+    padding: 4px 8px;
+    border: 1px black solid;
+  }
+
+  th {
+    padding: 4px;
+    border: 1px black solid;
+  }
+}

@@ -8,7 +8,7 @@ const INITIAL_TEXT_WITH_LATEX =
   "We give illustrations for the three processes $e^+e^-$, gluon-gluon and some macros: $\\f\\relax{x} = 1$";
 const INITIAL_STRICT_FLAG = false;
 const INITIAL_MACROS = { "\\f": "#1f(#2)" };
-const MACROS_PLACEHOLDER = `Default: ${JSON.stringify(INITIAL_MACROS)}`
+const MACROS_PLACEHOLDER = `Default: ${JSON.stringify(INITIAL_MACROS)}`;
 
 export default function App() {
   const [text, setText] = useState(INITIAL_TEXT_WITH_LATEX);
@@ -53,7 +53,7 @@ export default function App() {
           />
         </div>
         <div>
-          <label for="macrosJsonTextBox" style={{ verticalAlign: 'top'}}>
+          <label for="macrosJsonTextBox" style={{ verticalAlign: "top" }}>
             Macros (JSON)
           </label>
           <textarea
@@ -67,7 +67,7 @@ export default function App() {
                 setMacros(marcos);
               } catch (error) {
                 // TODO: show feedback to the user
-                setMacros(INITIAL_MACROS)
+                setMacros(INITIAL_MACROS);
               }
             }}
           />
@@ -80,16 +80,32 @@ export default function App() {
       </div>
       <div>
         <h2>Examples using JS expressions in LaTeX formula</h2>
-
-        <p>
-          <code>{`<Latex>\${variableName} \\times {otherVariableName}$</Latex>`}</code>
-        </p>
-        <Latex>${variableName} \times {otherVariableName}$</Latex>
-
-        <p>
-          <code>{`<Latex>$3^9 = {Math.pow(3,9)}$</Latex>`}</code>
-        </p>
-        <Latex>$3^9 = {Math.pow(3,9)}$</Latex>
+        <table className="example-table">
+          <thead>
+            <tr>
+              <th scope="col">Code</th>
+              <th scope="col">Rendered</th>
+            </tr>
+          </thead>
+          <tr>
+            <td>
+              <code>{`<Latex>\${variableName} \\times {otherVariableName}$</Latex>`}</code>
+            </td>
+            <td>
+              <Latex>
+                ${variableName} \times {otherVariableName}$
+              </Latex>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>{`<Latex>$3^9 = {Math.pow(3,9)}$</Latex>`}</code>
+            </td>
+            <td>
+              <Latex>$3^9 = {Math.pow(3, 9)}$</Latex>
+            </td>
+          </tr>
+        </table>
       </div>
     </main>
   );
