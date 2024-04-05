@@ -16,7 +16,7 @@
     "math"
   ],
   "engines": {
-    "node": ">=8",
+    "node": ">=12",
     "npm": ">=5"
   },
   "scripts": {
