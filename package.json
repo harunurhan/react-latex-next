@@ -1,6 +1,6 @@
 {
   "name": "react-latex-next",
-  "version": "2.3.0",
+  "version": "3.0.0",
   "description": "Render LaTeX in React apps",
   "author": "harunurhan",
   "homepage": "https://react-latex.netlify.app",
